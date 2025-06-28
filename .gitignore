@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv/
+
+# Flask
+instance/
+.webassets-cache
+*.db
+*.sqlite
+*.sqlite3
+
+# 日志文件
+logs/
+*.log
+
+# 环境变量
+.env
+.env.*
+.flaskenv
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# 操作系统
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# 部署相关
+*.pid
+*.sock
+
+# 测试覆盖率
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# 临时文件
+.tmp/
+.temp/
+tmp/
+temp/

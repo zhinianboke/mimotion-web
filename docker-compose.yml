@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    container_name: mimotion-web
+    ports:
+      - "5002:5002"
+    environment:
+      - SECRET_KEY=prod-secret-key
+      # 可自行配置数据库，如需使用 PostgreSQL 修改 DATABASE_URL
+    volumes:
+      - mimotion_data:/app/instance
+    restart: unless-stopped
+
+volumes:
+  mimotion_data: 
