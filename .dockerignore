@@ -14,8 +14,6 @@ __pycache__/
 .gitignore
 
 # 数据库与实例
-instance/
-*.db
 
 # 其他
 .env 

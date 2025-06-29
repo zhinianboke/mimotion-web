@@ -116,12 +116,20 @@ def sync_account(id):
         return redirect(url_for('account.list_accounts'))
     
     try:
-        # 获取当前时间对应的步数范围
-        hour = datetime.now().hour
-        time_rate = min(hour / 22, 1)
-        min_step = int(time_rate * account.min_step)
-        max_step = int(time_rate * account.max_step)
-        step_count = random.randint(min_step, max_step)
+        # 判断是否有自定义步数参数
+        custom_step_count = request.args.get('step_count')
+        
+        if custom_step_count and custom_step_count.isdigit():
+            # 使用自定义步数
+            step_count = int(custom_step_count)
+            step_count = max(1, min(step_count, 99999))  # 确保步数在合理范围内
+        else:
+            # 获取当前时间对应的步数范围
+            hour = datetime.now().hour
+            time_rate = min(hour / 22, 1)
+            min_step = int(time_rate * account.min_step)
+            max_step = int(time_rate * account.max_step)
+            step_count = random.randint(min_step, max_step)
         
         # 同步步数
         mi_motion = MiMotion(account.mi_user, account.mi_password)
